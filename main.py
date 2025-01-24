@@ -8,7 +8,41 @@ from sklearn.ensemble import  GradientBoostingClassifier
 def load_model():
     return joblib.load('gb.pkl')
 
+
+
 st.cache_resource.clear()
+
+# Custom CSS for styling
+st.markdown("""
+    <style>
+        body {
+            background-color: #e3f2fd;  /* Light blue background with a hint of dark blue */
+        }
+        .stApp {
+            color: #1a237e;  /* Dark blue text color */
+        }
+        .stButton>button {
+            background-color: #0d47a1;  /* Dark blue button color */
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+        .stButton>button:hover {
+            background-color: #1565c0;  /* Slightly lighter dark blue on hover */
+        }
+        .stTextInput>div>input {
+            border: 2px solid #1a237e;  /* Dark blue borders for input fields */
+            border-radius: 5px;
+        }
+        h1, h2, h3, h4 {
+            color: #1a237e;  /* Dark blue color for headers */
+        }
+        .stSelectbox select, .stNumberInput input {
+            border: 2px solid #1a237e;  /* Dark blue borders for select boxes and number inputs */
+            border-radius: 5px;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 st.title('Diabetes Risk Prediction Tool')
 st.write(
@@ -16,7 +50,7 @@ st.write(
     This website is designed to help you understand your risk of developing diabetes.
     By analyzing key health and lifestyle factors, it provides valuable insights to support early detection 
     and preventive healthcare strategies.
-    
+
     Take control of your health today!
     """
 )
